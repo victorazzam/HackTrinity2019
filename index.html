@@ -513,7 +513,7 @@ code {
 								So all we really have to do is find out what the final value of <code>var_B</code> should be. This is easy because XOR is a reversible operation. So if <code>a = b ^ c</code> is true, then both <code>b = a ^ c</code> and <code>c = a ^ b</code> are also true. In this case, the encrypted flag XORed with <code>var_B</code> produces the real flag. So to find the value of <code>var_B</code>, we can XOR a known part of the flag (we know the first part is <code>HackTrinity{</code>) with the encrypted flag.
 							</p>
 							<p>
-								Find <code>encrypted_flag</code> in the left section, take the first character which is 0x1b (27), and XOR it with "H" (72).
+								Find <code>encrypted_flag</code> in the left section, take the first character which is <code>0x1b</code> (27), and XOR it with <code>H</code> (72).
 								<img style="width:250px;border:none" src="images/challenge-denovo2-3.png">
 								Cool, now we know that 83 is the value of <code>var_B</code>. The last thing to do is to XOR the bytes in <code>encrypted_flag</code> with 83 and recover the flag. A short Python script should do the trick.
 							</p>
@@ -939,7 +939,7 @@ Type "help", "copyright", "credits" or "license" for more information.</span>
 									<li>A string with the process ID of the current program and "layer1" is written to <code>var_110</code>, e.g. "/denovo_1337_layer1"</li>
 									<li>The user defined function <code>layer_key</code> does something to <code>var_168</code> and possibly stores the result in <code>var_140</code></li>
 									<li><code>rc4_dlopen</code> is called with <code>var_110</code>, <code>var_140</code> and what look to be 2 memory addresses</li>
-									<li>If <code>var_150</code> (the return value) is not 0 then <code>dlsym</code> tries to dynamically load the file descriptor <code>var_150</code></li>
+									<li>If <code>var_150</code> (the return value) is not <code>0</code> then <code>dlsym</code> tries to dynamically load the file descriptor <code>var_150</code></li>
 									<li>The return value of <code>dlsym</code> is called with the original user input <code>var_168</code> (twice), <code>argc</code>, <code>argv</code> and "layer1"</li>
 									<li>Finally <code>rc4_dlclose</code> is run, probably to clean up open file descriptors</li>
 								</ol>
@@ -947,7 +947,7 @@ Type "help", "copyright", "credits" or "license" for more information.</span>
 							<p>
 								What's interesting is that the flow here hinges on a modified version of the user input. Let's have a look at what's inside the <code>layer_key</code> function.
 								<img src="images/challenge-denovo3-3.png">
-								The first argument is stored in <code>var_18</code> and is loaded with the first 2 bytes from the user input. Then a loop of 22 iterations tests something and writes an ASCII <code>-</code> or <code>0</code> to <code>var_18</code> depending on the outcome. So why is this function zeroing out parts of the user inputted serial key? Hmm...
+								The first argument is stored in <code>var_18</code> and is loaded with the first 2 bytes from the user input. Then a loop of 32 iterations tests something and writes an ASCII <code>-</code> or <code>0</code> to <code>var_18</code> depending on the outcome. So why is this function zeroing out parts of the user inputted serial key? Hmm...
 							</p>
 							<p>
 								This is where dynamic analysis comes in handy. Run <b>gdb</b> and set a breakpoint at the <code>layer_key</code> function, then check the value of <code>rdi</code> and <code>rsi</code>.
