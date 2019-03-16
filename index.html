@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Content-Language" content="en">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="theme-color" content="#4188c9">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<title>Write-up of HackTrinity '19</title>
+	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="src/fonts.css">
+	<link rel="stylesheet" href="src/style.css">
+	<link rel="stylesheet" href="src/solutions.css">
+	<style>
+.top-text {
+	font-size: 13pt;
+}
+.category {
+	margin-top: 0.3em;
+}
+.challenge-header {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+code {
+	color: #e83e8c;
+}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="page-main">
+			<div class="my-3 my-md-5 attackd-page" id="page-id-scoreboard">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 mb-2">
+							<div class="alert">
+								<div class="text-center" style="font-weight:bold">
+									<img src="images/logo.png" height="160px">
+									<h1 class="display-5">HackTrinity '19 solutions</h1>
+									<h3 class="display-5" style="color:#4080c0">
+										<a href="https://github.com/victorazzam" target="_blank">by Victor Azzam</a>
+									</h3>
+								</div>
+								<br>
+								<p class="top-text">
+									First of all, I would like to thank Rory, Emmet, Jack, Swapnil and Donal of <a href="https://twitter.com/HackTrinityCTF" target="_blank">@HackTrinityCTF</a> for putting together this wonderfully organised event. It went off seemingly without a hitch, so well done to you lads! It will only get better from here.
+								</p>
+								<p class="top-text">
+									A special thanks goes to the mastermind behind Denovo 3. I spent more than 30 hours on that challenge and eventually solved it after powering through it from Friday night until Saturday morning. Of all the challenges, this one made me feel the most accomplished as I had conquered something that was completely alien to me before. So thank you for granting me this experience!
+								</p>
+								<p class="top-text">
+									Keep an eye on HackTrinity's social media if you're looking to get the source code of the challenges.
+								</p>
+								<p class="top-text">
+									Without further ado, here are my solutions.
+								</p>
+							</div>
+						</div>
+					</div>
+					<!----------** Welcome to HackTrinity! **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Welcome to HackTrinity! - <b>50 points</b></h3>
+							<span class="badge badge-info ml-3 category">intro</span>
+						</div>
+						<div class="card-body">
+							<p>If you've never played a Capture-The-Flag competition before, worry not!</p>
+							<p>The aim of the game is to find a string of text called a flag</p>
+							<p>Usually the flag will be in the form <code>HackTrinity{&lt;flag&gt;}</code>, but sometimes it can be a different piece of text</p>
+							<p>To receive a free 50 points, enter <code>HackTrinity{well_that_was_a_freebie}</code> in the box below, and click Check.</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								Nice and simple, to get you into the groove of challenge-solving.
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{well_that_was_a_freebie}</div>
+						</div>
+					</div>
+					<!----------** RTFR **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">RTFR - <b>75 points</b></h3>
+							<span class="badge badge-info ml-3 category">intro</span>
+						</div>
+						<div class="card-body">
+							<p>Oooh, we Trinity students love our rules and procedures.</p>
+							<p>We love them so much we included a flag in the rules for this competition. Can you find it?</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								The title is short for <em>Read The F***ing Rules</em>, and I did.
+								<img src="images/challenge-rtfr.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{article_4a_subsection_c_paragraph_3_shall_not_apply_in_case_of_earthquakes}</div>
+						</div>
+					</div>
+					<!----------** Say no to phishing **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Say no to phishing - <b>77 points</b></h3>
+							<span class="badge badge-info ml-3 category">misc</span>
+						</div>
+						<div class="card-body">
+							<p>What's our real Twitter handle?</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								I happened to be on <a href="https://twitter.com/HackTrinityCTF" target="_blank">their Twitter page<a> when this one was released.
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinityCTF</div>
+						</div>
+					</div>
+					<!----------** Denovo 1 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Denovo 1 - <b>100 points</b></h3>
+							<span class="badge badge-info ml-3 category">reversing</span>
+						</div>
+						<div class="card-body">
+							<p>Denovo is a new startup which develops DRM for games.</p>
+							<p>Version 1 is to be released soon, and you've been called in to test its effectiveness...</p>
+							<p>Note: Denovo have decided that serial keys for v1 and all future versions look like "XXXXXX-XXXXXX-XXXXXX-XXXXXX-XXXXXX", where 'X' is a capital letter.</p>
+							<p>Both binaries below are generated from the same code, one is built for ARM platforms and one for x86-64. You can choose whichever you're most comfortable with :)</p>
+							<a href="challenges/denovo_v1_x86">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								denovo_v1_x86
+							</a>
+							<br>
+							<a href="challenges/denovo_v1_arm">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								denovo_v1_arm
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This is a classic warm-up reverse engineering challenge. Running the binary presents an input field for a serial key, which presumably protects the flag.
+								<img src="images/challenge-denovo1-1.png">
+							</p>
+							<p>
+								There are usually 2 approaches to these kinds of challenges &mdash; static and dynamic analysis. Static analysis involves disassembling the instructions of a program in assembly language, sometimes producing C-like pseudocode, and figuring out what it does without actually running it. On the other hand with dynamic analysis, you would normally run the program in a debugger and inspect its allocated memory while it is running. Just for this example, I will demonstrate a method for each of those approaches.
+							</p>
+							<p>
+								First let's start with static analysis. I use <a href="https://www.hopperapp.com" target="_blank"><b>Hopper Disassembler</b></a> because it has a free version that has enough functionality. Drag the binary into <b>Hopper</b> and you will see several panels. The left side displays the symbols with their labels (like function names, values, etc) and the middle section shows the disassembly of the selected symbol. Most programs, especially ELF binaries, start in <code>main</code>, so select that and choose pseudo-code mode.
+								<img src="images/challenge-denovo1-2.png">
+								The main function shows the general flow of the program when it executes. Variables are declared at the top, some functions are called, and at the end there is basic control flow implemented using an <code>if</code> statement, then the program exits.
+							</p>
+							<p>
+								The first two variables concern command-line arguments, which we don't need to worry about here. Then 4 functions are called:
+								<ol>
+									<li><code>fwrite</code> prints a string found at 0x400d28 to the screen</li>
+									<li><code>fgets</code> reads 0x23 (35) bytes from standard input and stores it in <code>var_60</code></li>
+									<li><code>ascii_unshift</code> is a user-defined function that we will look at shortly</li>
+									<li><code>strcmp</code> compares <code>var_60</code> to <code>var_30</code> and returns 0 if they are the same</li>
+								</ol>
+							</p>
+							<p>
+								So it basically asks the user to input the serial key, passes some sequence of bytes at address 0x400d00 to <code>ascii_unshift</code> and compares the user input to <code>var_30</code>. Now let's look at what <code>ascii_unshift</code> does and why <code>var_30</code> is relevant.
+								<img src="images/challenge-denovo1-3.png">
+								It takes in 2 parameters, loops over the bytes in the second one, bitwise right-shifts them by 1 and saves the result in the first parameter. This may seem confusing if this is your first time reversing, so here's a cleaned up version of <code>ascii_unshift</code> to help you understand:
+								<pre>
+<span class="py-kw">int</span> <span class="py-fn">ascii_unshift</span>(var1, var2) {
+    <span class="py-kw">for</span> (<span class="py-kw">int</span> i = <span class="py-int">0</span>; i &lt; <span class="py-fn">strlen</span>(var2); i++) {
+        var1[i] = var2[i] &gt;&gt; <span class="py-int">1</span>;
+    }
+    <span class="py-kw">return</span> var1;
+}</pre>
+								Essentially we get <code>var_30</code> from a bitwise right-shift operation on a given string, in this case <code>main</code> passes 0x400d00 to <code>ascii_unshift</code>. So where does 0x400d00 come from and why is it important? If you look at the symbols again, you can see <code>shifted_serial</code> is at that address, so let's check it out.
+							</p>
+							<p>
+								<img src="images/challenge-denovo1-4.png">
+								The serial key is formatted in 5 groups of 6 uppercase letters separated by dashes, so the <code>Z</code>-separated bytes just need to be shifted right once in order to retrieve the key (which is what <code>ascii_unshift</code> does). I wrote a script to do that and it printed the key right away.
+							</p>
+							<p>
+								<a href="attachments/denovo1.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									denovo1.py
+								</a>
+							</p>
+							<p>
+								When I entered the correct serial key into the binary, it said to guess a number between 1 and 100, but that part doesn't need reversing. When you get the number right, the flag will be shown.
+								<img src="images/challenge-denovo1-5.png">
+								Also, if you haven't noticed, there is a <code>shifted_flag</code> symbol that can be deciphered just as easily, so you could skip this last part altogether and shift the flag instead of the key.
+							</p>
+							<p>
+								Now for the dynamic part, I will be using <b>gdb</b> because it is the standard GNU debugger and is included in almost every Linux distribution. Run <code>gdb denovo_v1_x86</code> to start the debugging process. Same as in <b>Hopper</b> we want to disassemble the <code>main</code> function, so type <code>disas main</code> to do that.
+								<img src="images/challenge-denovo1-6.png">
+								Looking at the instructions, notice the function calls to <code>fwrite</code> and <code>fgets</code> and others. It is practically the same as what we've already seen, except expressed in assembly. We know that at the <code>strcmp</code> call, the user input is compared with the serial key. Just before that, two values are being loaded into <code>rdi</code> and <code>rsi</code> to be used as function parameters.
+							</p>
+							<p>
+								Let's set a breakpoint at the <code>strcmp</code> line and inspect those registers. A breakpoint pauses code execution, which gives time to inspect or change the program's memory and resume when needed.
+								<img src="images/challenge-denovo1-7.png">
+								Great, the serial key has been recovered! So let's quickly recap the commands:
+								<ul>
+									<li><code>b</code> is short for <code>breakpoint</code> and sets a breakpoint at a given address</li>
+									<li><code>r</code> is short for <code>run</code> and runs the program, stopping at every breakpoint</li>
+									<li><code>x/s</code> means e<code>x</code>amine memory as a <code>s</code>tring</li>
+								</ul>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{n0_drm_1s_uNBreAkable}</div>
+						</div>
+					</div>
+					<!----------** Bunny **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Bunny - <b>100 points</b></h3>
+							<span class="badge badge-info ml-3 category">forensics</span>
+						</div>
+						<div class="card-body">
+							<p>TCD Disinformation Services have been hard at work making sure that any flag-containing media is fully censored.</p>
+							<p>Apparently one slipped through... Can you find it?</p>
+							<a href="challenges/bunny.mkv">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								bunny.mkv
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								One of the first things you should do with media files is read their metadata. A popular tool to do just that is <b>exiftool</b>. Running it against the file shows some strange text in the title of the video.
+							</p>
+							<p>
+								If you're not familiar with Base64 encoding then you'll likely dismiss it as some sort of anomaly. The character set of Base64 is usually alphanumerics, <code>+</code>, and <code>/</code>, and you'll learn to spot that type of text with enough practice.
+							</p>
+							<p>
+								Decoding the Base64 string will output the flag.
+								<img src="images/challenge-bunny.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{1ts_n0t_jUsT_ab0ut_th3_v1de0}</div>
+						</div>
+					</div>
+					<!----------** Book of Kells 1 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Book of Kells 1 - <b>113 points</b></h3>
+							<span class="badge badge-info ml-3 category">darkweb/recon</span>
+						</div>
+						<div class="card-body">
+							<p>Oh noes! Someone's stole the Book of Kells and is auctioning it off on the Dark Web!</p>
+							<p>Download the <a href="https://www.torproject.org" target="_blank">Tor Browser</a> and visit the auction site at <a href="http://uxpkyayer253dtcl.onion" target="_blank">http://uxpkyayer253dtcl.onion</a> to find out who's been making bids on this Trinity treasure :O</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								Open your Tor browser and navigate to the given URL to be greeted with a phpBB-based forum. First you need to register an account.
+								Then simply find the auction post, which is the only post there, and scroll down to the bottom to reveal the flag.
+								<img src="images/challenge-kells1-1.png">
+								<img src="images/challenge-kells1-2.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{welcome_to_the_dark_web_its_rather_boring_tbqhwy}</div>
+						</div>
+					</div>
+					<!----------** LUAS **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">LUAS - <b>114 points</b></h3>
+							<span class="badge badge-info ml-3 category">blockchain/recon</span>
+						</div>
+						<div class="card-body">
+							<p>The Luas website has been hacked again, and a threatening ransom message posted. Can you track down the culprit's real full name?</p>
+							<a href="https://luas.hacktrinity.me" target="_blank">https://luas.hacktrinity.me</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								If you've been following the news around this time, this challenge might look familiar. The webpage shows a message, akin to the one left by the hacker that defaced the LUAS website.
+								<img src="images/challenge-luas-1.png">
+								The key take away here is that the ransom note asks for 0.2 ZEC to be sent to <code>t1gok64PM8APnrSWXgBxboqHrszFYqP5v3L</code>, which is a Zcash wallet address. And if you know anything about cryptocurrencies, you'll know that the transactions are public information for most crypto coins.
+							</p>
+							<p>
+								So what does that mean? Well, let's see if there's a way to find out this account's recent activity.
+								<img src="images/challenge-luas-2.png">
+								Great, some money has been received, around 0.2 ZEC. But wait, the same amount was sent somewhere else. Let's follow the money:
+							</p>
+							<p>
+								<code>t1gok64PM8APnrSWXgBxboqHrszFYqP5v3L</code><br>
+								<br><code>t1SG8g9mKchT5LBvEbRF35rrBYsX9JHutgb</code><br>
+								<br><code>t1VNt93X3pXSDPep4Q7vGiEtsnYHMa63Q2w</code><br>
+								<br><code>t1MHpjzxU4atBQgzbbiuLVVgMqDfBqjeoNU</code><br>
+								<br><code>t1UsHt8hn5ZK4mfMu1ddj6BFfDJPdQmZ9Ns</code>
+							</p>
+							<p>
+								Finally landing on an account that has not sent anything out, the most obvious choice from here is to see if Google has indexed any pages mentioning that address. And indeed there is one &mdash; a blog by Mael Bonzaro.
+								<img src="images/challenge-luas-3.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">Mael Bonzaro</div>
+						</div>
+					</div>
+					<!----------** Trinity Ball 1 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Trinity Ball 1 - <b>119 points</b></h3>
+							<span class="badge badge-info ml-3 category">web</span>
+						</div>
+						<div class="card-body">
+							<p>Tickets for Trinity Ball have finally been released! Due to high demand, the organisers have limited tickets to one per person. Can you bypass the restrictions and checkout two tickets at once?</p>
+							<a href="https://trinityball1.hacktrinity.me" target="_blank">https://trinityball1.hacktrinity.me</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								Opening the website leads to a page with an image and an <em>Order</em> button. Clicking on the button redirects to a simple ticket purchasing interface.
+								<img src="images/challenge-tball1-1.png">
+								Trying to buy one ticket works fine, as the basket counter successfully increments, but clicking on <em>Add to basket</em> doesn't work the second time as the button becomes greyed out.
+							</p>
+							<p>
+								You could simply Inspect Element and re-enable the button by removing the <em>disabled</em> HTML attribute (since this is all happening on the client side), or you could look at the source code and figure out that buying a ticket means sending a request to <code>/addItemToBasket.php?id=1</code>, so then just <code>fetch("/addItemToBasket.php?id=1")</code> from your browser's JavaScript console and cash out 2 tickets.
+								<img src="images/challenge-tball1-2.png">
+								But that's boring :P let's do it on the command line.
+								<img src="images/challenge-tball1-3.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{client_side_is_best_side}</div>
+						</div>
+					</div>
+					<!----------** Welcome **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Welcome - <b>120 points</b></h3>
+							<span class="badge badge-info ml-3 category">networking</span>
+						</div>
+						<div class="card-body">
+							<p style="font-weight: bold">NB: Networking challenges will not work on some college networks - try your home network instead. Make sure UDP ports 2000 and up are usable for outbound traffic.</p>
+							<p>The networking challenges for this CTF make use of a project called Naumachia, which places you in an isolated network environment.</p>
+							<p>Each challenge has a dedicated OpenVPN server (you can download your credentials at the link at the bottom of the challenge description). See <a href="https://github.com/devplayer0/Naumachia#client-connection-instructions" target="_blank">here</a> for the steps to get your device connected.</p>
+							<p>While the connection is being established, a set of containers will be created for you. You can then run a DHCP client (on Linux or Mac, Windows will perform DHCP automatically) to get an IP and see the subnet you have been allocated.</p>
+							<p>You can also connect multiple machines to the same challenge instance using the same credentials if you want. When all of your devices have disconnected, your containers for that challenge will be destroyed (and re-created next time you connect).</p>
+							<p>Once you're all set up, this challenge should be fairly easy: you should be able to nmap your allocated subnet to find a web server hosting the flag.</p>
+							<a href="challenges/welcome23.ovpn">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								Download OpenVPN config for this challenge
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This challenge requires a VPN connection to HackTrinity servers using the OpenVPN standard protocol. Upon connecting you are allocated a subnet, essentially a small range of IPs on the virtual network, in the form <code>10.137.x.x/28</code> and the task is to find a web server on the network that has the flag.
+							</p>
+							<p>
+								A great tool for probing networks is <b>nmap</b>, and I used it to find out if any devices were running some kind of web server.
+								<img src="images/challenge-welcome-1.png">
+								Bingo! It found <code>10.137.5.99</code> and identified an open port for HTTP traffic, so this must be where the flag is hosted.
+								<img src="images/challenge-welcome-2.png">
+								<img src="images/challenge-welcome-3.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{G0ttA_lOV3_oPenvPn}</div>
+						</div>
+					</div>
+					<!----------** Dust in your eyes? **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Dust in your eyes? - <b>121 points</b></h3>
+							<span class="badge badge-info ml-3 category">crypto/steganography</span>
+						</div>
+						<div class="card-body">
+							<p>Apparently the flag is in the file <code>hidden.txt</code> but I can't find it, good luck to you!<p>
+							<a href="challenges/hidden.txt">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								hidden.txt
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								If you open the file in a browser and Inspect Element on the text, you'll notice that there are a lot of invisible characters written as HTML entities. This is because the file uses non-printable Unicode to hide some data, probably the real flag.
+							</p>
+							<p>
+								The character that comes up the most is <code>&amp;zwnj;</code> so let's look it up. Wikipedia says that it is a zero-width non-joiner generally used to help with writing ligatures, especially in Middle Eastern languages. All that's left is to look for steganography that uses these symbols.
+							<p>
+							<p>
+								A DuckDuckGo search for <em>zero width steganography</em> returns <code>https://330k.github.io/misc_tools/unicode_steganography.html</code> as the first link. Great, looks like we're in luck as someone has already implemented this technique.
+								<img src="images/challenge-dust.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{clean your glasses}</div>
+						</div>
+					</div>
+					<!----------** GNU **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">GNU - <b>130 points</b></h3>
+							<span class="badge badge-info ml-3 category">networking</span>
+						</div>
+						<div class="card-body">
+							<p style="font-weight: bold">NB: Networking challenges will not work on some college networks - try your home network instead. Make sure UDP ports 2000 and up are usable for outbound traffic.</p>
+							<p>You should really listen a bit more.</p>
+							<a href="challenges/gnu23.ovpn">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								Download OpenVPN config for this challenge
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This is yet another OpenVPN challenge. Normally you would want to scan the network for devices, but the description says to listen more. This suggests that you may be able to get the flag just by monitoring the network traffic.
+							</p>
+							<p>
+								A perfect tool for this job is Wireshark, so open that and select the interface connected via OpenVPN to start intercepting packets being sent on that network. You will immediately notice an influx of UDP packets from different hosts. To inspect the stream, right click on one of the packets and choose <em>Follow</em> &gt; <em>UDP Stream</em>.
+								<img src="images/challenge-gnu-1.png">
+								Then look through the stream contents until you see the flag.
+								<img src="images/challenge-gnu-2.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{Stal1man_1s_0ur_LOrD_and_Savi0ur}</div>
+						</div>
+					</div>
+					<!----------** Who Am I? **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Who Am I? - <b>143 points</b></h3>
+							<span class="badge badge-info ml-3 category">recon</span>
+						</div>
+						<div class="card-body">
+							<p>We discovered a GSM audio bug in the president's office. Our counter-surveillance techs have determined that the bug was setup to phone home to +353 89 490 9392. We suspect this number is probably the personal phone number of one of the bad people involved (they're not very smart). Can you use your open-source intelligence gathering skills to discover the real-life identity of the owner of this phone?</p>
+							<p>Hint: they use a service used by >1 billion other people</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								The hint for this challenge was a dead giveaway. There are very few services this popular that ask for a phone number. The first (and last) place I looked was WhatsApp. Just add the given number to your contacts and check their WhatsApp profile picture.
+								<img src="images/challenge-whoami.png" height="300px">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{maybe_we_should_e2e_encrypt_profile_pics}</div>
+						</div>
+					</div>
+					<!----------** Brew **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Brew - <b>150 points</b></h3>
+							<span class="badge badge-info ml-3 category">misc</span>
+						</div>
+						<div class="card-body">
+							<p>I was trawling through my email the other day to see if I could find any flags and I found a message with this file in my spam box.</p>
+							<p>The subject line claimed "FLAG WITHIN!", but I can't make any sense of it.</p>
+							<a href="challenges/brew.cia">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								brew.cia
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								<a href="https://en.wikipedia.org/wiki/List_of_filename_extensions_(A%E2%80%93E)#CIA" target="_blank">According to Wikipedia</a>, a CIA file is a Nintendo 3DS importable archive. You could spend a lot of time trying to get <b>ctrtool</b> to extract the archive's contents, only to realise that a better first step would be to find a 3DS emulator.
+							</p>
+							<p>
+								I downloaded Citra, which is a cross-platform Nintendo 3DS emulator, and loaded the given file to check out if it did anything. A window popped up with instructions to "touch the four corners" to get the flag, even though there were more than four corners. Defeating the impossible presented me with the flag!
+								<img src="images/challenge-brew.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{DoNt_g1v3_yoUr_wii_Orange_JuiCe}</div>
+						</div>
+					</div>
+					<!----------** Denovo 2 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Denovo 2 - <b>175 points</b></h3>
+							<span class="badge badge-info ml-3 category">reversing</span>
+						</div>
+						<div class="card-body">
+							<p>After Denovo v1 was released into the wild (despite your warnings) and cracks for the protected games appeared online within the hour, the engineers went back to the drawing board.</p>
+							<p>Now they're ready to release Denovo v2. Apparently the new version makes use of a proprietary encryption solution which is UNCRACKABLE. Can you take a look?</p>
+							<p>Both binaries below are generated from the same code, one is built for ARM platforms and one for x86-64. You can choose whichever you're most comfortable with :)</p>
+							<a href="challenges/denovo_v2_x86">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								denovo_v2_x86
+							</a>
+							<br>
+							<a href="challenges/denovo_v2_arm">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								denovo_v2_arm
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								In the previous Denovo challenge I covered the basics of reverse engineering. This time it's a bit more complicated as the function we need to reverse is a good bit larger. Let's open up <b>Hopper</b> and view the main function in pseudo-code mode.
+								<img src="images/challenge-denovo2-1.png">
+								The code looks similar to the previous one, except that <code>ascii_unshift</code> has been replaced by <code>dnv_decrypt</code> as the new decryption function. Here is a break down:
+								<ol>
+									<li><code>fwrite</code> asks for the serial key and <code>fgets</code> reads user input from STDIN (standard input) storing it in <code>var_70</code></li>
+									<li>The <code>asm { rep &#8230; }</code> loop fills the new variable <code>var_40</code> with zeros <a href="https://www.felixcloutier.com/x86/stos:stosb:stosw:stosd:stosq" target="_blank">(read more about <em>stos</em>)</a></li>
+									<li><code>dnv_decrypt</code> is called with the address of <code>var_40</code>, the address 0x400d40, a constant of 0x2c (44) and <code>var_70</code></li>
+									<li><code>denovo_app</code> is called if <code>dnv_decrypt</code> returns 1 or else the program exits with an error</li>
+								</ol>
+							</p>
+							<p>
+								Now let's look at the <code>dnv_decrypt</code> function.
+								<img src="images/challenge-denovo2-2.png">
+								<ol>
+									<li>It takes in 4 parameters; it was called with <code>var_40</code>, <code>encrypted_flag</code> at 0x400d40, 0x2c (44), and the user input from <code>var_70</code></li>
+									<li>Makes sure that the last parameter is a string of length 0x22 (34)</li>
+									<li>Loops 30 times while adding values to <code>var_B</code></li>
+									<li>Loops over the 2nd parameter as many times as specified by the 3rd parameter while bitwise XORing each value with <code>var_B</code> and storing the result in the 1st parameter</li>
+									<li>And finally compares the first 12 characters of the result to the 12 characters at the start of the flag</li>
+								</ol>
+								So the whole "encryption" is a basic XOR operation with a static value stored in <code>var_B</code>. The only part of the code that affects <code>var_B</code> is the bit at the bottom of the loop, and we need to find out its final value.
+							</p>
+							<p>
+								Some offset from the 4th argument &mdash; the user input &mdash; is stored in <code>var_9</code>, which is added to <code>var_B</code> minus 0x41 (65) only if <code>var_9</code> is in the ASCII uppercase range (65 to 90). Looks like it just ignores the dashes in the user input and increases <code>var_B</code> by the offset of each value in the user input from the start of the uppercase alphabet, hence the 0x41 (65) which is the letter "A" in ASCII. And when <code>var_B</code> reaches a certain value, XORing it with <code>encrypted_flag</code> will produce the flag.
+							</p>
+							<p>
+								So all we really have to do is find out what the final value of <code>var_B</code> should be. This is easy because XOR is a reversible operation. So if <code>a = b ^ c</code> is true, then both <code>b = a ^ c</code> and <code>c = a ^ b</code> are also true. In this case, the encrypted flag XORed with <code>var_B</code> produces the real flag. So to find the value of <code>var_B</code>, we can XOR a known part of the flag (we know the first part is <code>HackTrinity{</code>) with the encrypted flag.
+							</p>
+							<p>
+								Find <code>encrypted_flag</code> in the left section, take the first character which is 0x1b (27), and XOR it with "H" (72).
+								<img style="width:250px;border:none" src="images/challenge-denovo2-3.png">
+								Cool, now we know that 83 is the value of <code>var_B</code>. The last thing to do is to XOR the bytes in <code>encrypted_flag</code> with 83 and recover the flag. A short Python script should do the trick.
+							</p>
+							<p>
+								<a href="attachments/denovo2.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									denovo2.py
+								</a>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{h0w_do_1_knOw_th3_fl@g_1s_r1Ght}</div>
+						</div>
+					</div>
+					<!----------** Turing-Lang **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Turing-Lang - <b>179 points</b></h3>
+							<span class="badge badge-info ml-3 category">programming</span>
+						</div>
+						<div class="card-body">
+							<p>My friend Urban Turing made a new language and he claims that it is Turing complete, can you run the program he has written in this new language?</p>
+							<a href="challenges/program.txt">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								program.txt
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This strange language claims to be Turing complete. I know from experience with esoteric languages that Brainfuck is turing complete as well, and it was created by Urban Müller. See the connection?
+							</p>
+							<p>
+								If you look at the character set of Brainfuck you'll notice that, out of the 8 symbols available, the comma (used for taking user input) is seldom used. I then tried to guess what each symbol translated to based on how Brainfuck programs are usually written.
+							</p>
+							<p>
+								The general gist of a Brainfuck program is as follows:
+								<ul>
+									<li>Set the initial cell to a desired value, usually a common multiple for other cells that will be used for outputting text.</li>
+									<li>Create a loop that moves the pointer to further cells, changes their value by at least a factor of 2, and then moves back to the initial cell, repeating the process until the initial cell reaches zero. This effectively produces multiplication.</li>
+									<li>Output the ASCII representation of a cell when the desired value is reached, and repurpose the cell to print other values if needed.</li>
+								</ul>
+								You can, just by looking at other Brainfuck programs, tell which symbols go where. Some parts need guessing, like the <code>+</code> and <code>-</code> characters, but for the most part it isn't too hard to rule out certain combinations.
+							</p>
+							<p>
+								In essence, the given text translates to this Brainfuck code:
+								<pre>-[-------&gt;+&lt;]&gt;-.[---&gt;++++&lt;]&gt;+.++.++++++++.&gt;-[---&gt;+&lt;]&gt;-.-[---&gt;+&lt;]&gt;+.---------.+++++.-----.+++++++++++.+++++.++.[-&gt;+++++&lt;]&gt;++.----------.+++++.+++++++++++.-.++++++.+[-&gt;+++&lt;]&gt;.++++++++++++.+++.+.++++++++.--[-&gt;+++&lt;]&gt;.+++++++++++++.-------.+++++++++..[---&gt;+&lt;]&gt;-.++++.</pre>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{i_dont_know_lenny}</div>
+						</div>
+					</div>
+					<!----------** Big Chungus+3 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Big Chungus+3 - <b>180 points</b></h3>
+							<span class="badge badge-info ml-3 category">programming</span>
+						</div>
+						<div class="card-body">
+							<p>Some normie sent you some strange code, can you find out how to run it?</p>
+							<code>chunga fudd chunga chunga chunga chunga chunga chunga chunga big karen chungus ricardo big chunga chunky fudd chunga chunga chunga big karen karen karen karen chungus ricardo big karen chunky karen karen chunky karen karen karen karen karen karen karen karen chunky big chunga fudd chunga chunga chunga big karen chungus ricardo big chunga chunky chunga fudd chunga chunga chunga big karen chungus ricardo big karen chunky chunga chunga chunga chunga chunga chunga chunga chunga chunga chunky karen karen karen karen karen chunky chunga chunga chunga chunga chunga chunky karen karen karen karen karen karen karen karen karen karen karen chunky karen karen karen karen karen chunky karen karen chunky big chunga fudd chunga chunga chunga big karen chungus ricardo big chunga chunky fudd chunga chunga chunga chunga big karen karen karen karen karen chungus ricardo big chunga chunky chunga chunga chunga chunky fudd chunga chunga chunga big karen chungus ricardo big chunga chunga chunga chunga chunky karen karen karen karen fudd chunga big karen karen karen chungus ricardo big chunky chunga fudd chunga chunga chunga chunga big karen karen karen chungus ricardo big karen karen chunky big chunga chunga fudd chunga chunga chunga chunga chunga big karen chungus ricardo big chunga chunky karen karen karen karen karen karen karen karen chunky chunga chunga chunga chunga chunga chunga chunga chunga chunky fudd chunga chunga chunga big karen chungus ricardo big chunga chunga chunga chunga chunky fudd chunga big karen karen karen karen karen chungus ricardo big karen karen chunky chunga chunga fudd chunga chunga chunga chunga chunga big karen chungus ricardo big chunga chunky chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunky big chunga fudd chunga chunga chunga big karen chungus ricardo big chunga chunga chunky fudd chunga chunga chunga big karen chungus ricardo big chunga chunga chunky karen fudd chunga big karen karen karen karen karen chungus ricardo big chunky fudd chunga big karen karen karen karen karen karen karen chungus ricardo big chunga chunky chunga chunga chunga fudd chunga big karen karen karen karen chungus ricardo big chunky fudd chunga chunga chunga chunga chunga big karen chungus ricardo big chunga chunky fudd chunga big karen karen karen chungus ricardo big chunga chunky fudd chunga chunga chunga chunga chunga chunga big karen chungus ricardo big chunga chunky chunga chunga fudd chunga chunga chunga big karen chungus ricardo big chunga chunga chunky karen chunky karen fudd chunga chunga chunga big karen karen chungus ricardo big chunga chunky fudd chunga chunga chunga big karen chungus ricardo big chunky chunga chunky karen karen karen karen karen karen chunky chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunga chunky big chunga chunga fudd chunga chunga big karen karen karen chungus ricardo big chunky</code>
+							<br>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								Just like the one above, this is basically a Brainfuck translation without the comma. At that time the Turing-Lang challenge wasn't released yet, and I had some trouble figuring out the structure of Big Chungus+3 as that could have been a reference to Brainfuck+3 which has 3 symbols more than its parent language.
+							</p>
+							<p>
+								Not in the mood to try to write a Brainfuck+3 brute forcer, I took my chances by assuming it was Brainfuck and modified my <a href="https://gist.github.com/victorazzam/9b07948678d59ba8637f5914967a26c5" target="_blank">Brainfuck interpreter</a> to iterate over all permutations of <code>chunga</code>, <code>chungus</code>, <code>chunky</code>, <code>big</code>, <code>karen</code>, <code>ricardo</code> and <code>fudd</code> and map them to different combinations of Brainfuck symbols until one eventually prints the flag. And indeed it did. There are only 7 symbols and therefore 7 factorial (5040) possibilities, so it didn't take too long, having completed in under 1500 iterations.
+							</p>
+							<p>
+								<a href="attachments/bfbf.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									bfbf.py
+								</a>
+								<br>
+								<a href="attachments/chungus.txt">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									chungus.txt
+								</a>
+								<img src="images/challenge-bc.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{TheseMemesAreSo0O0oLastMonth}</div>
+						</div>
+					</div>
+					<!----------** Wise **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Wise - <b>180 points</b></h3>
+							<span class="badge badge-info ml-3 category">networking</span>
+						</div>
+						<div class="card-body">
+							<p style="font-weight: bold">NB: Networking challenges will not work on some college networks - try your home network instead. Make sure UDP ports 2000 and up are usable for outbound traffic.</p>
+							<p>Hey, it's rude to eavesdrop!</p>
+							<a href="challenges/wise23.ovpn">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								Download OpenVPN config for this challenge
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								First things first, let's connect to the VPN and scan the network for active hosts. Running <code>nmap -sV 10.137.24.0/24</code> reveals two devices: <code>10.137.24.210</code> with port 66 open, and <code>10.137.24.212</code> with no open ports.
+							</p>
+							<p>
+								Let's use <b>netcat</b> to see what port 66 is all about. Run <code>nc 10.137.24.210 66</code> to be greeted with the first line from <a href="https://knowyourmeme.com/memes/the-tragedy-of-darth-plagueis-the-wise" target="_blank">The Tragedy of Darth Plagueis The Wise</a> meme. The meme transcribes a conversation between Anakin and Palpatine from a Star Wars episode; in this case the server is taking on the role of Palpatine. Obviously we have to respond, so copy Anakin's text and keep the ball rolling.
+								<img src="images/challenge-wise-1.png">
+							</p>
+							<p>
+								Once the final message "Not from a Jedi." is received, the server for some reason expects more data to be sent, as it responds to random text instead of closing the connection. What if the other host, the one with no open ports, is having a conversation with the server that contains the next few lines?
+							</p>
+							<p>
+								The challenge description says not to eavesdrop, so it's plausible that this might require an attack like <a href="https://en.wikipedia.org/wiki/ARP_spoofing" target="_blank">ARP spoofing</a>, where we trick the server into thinking we're the client and vice versa, making any traffic between the two devices sniffable with a tool such as <b>Wireshark</b> and thus "eavesdropping" on their conversation. Let's try this!
+							</p>
+							<p>
+								Running <code>arpspoof -i tap0 -t 10.137.24.212 10.137.24.210</code> does the trick. Now all we need is to inspect the traffic and see what's being sent.
+								<img src="images/challenge-wise-2.png">
+								Nice, we have something! One packet from <code>10.137.24.212</code> says "Senator, what's this I've found?". Let's write a script to send all current lines to the server and see what we get.
+								<img src="images/challenge-wise-3.png">
+								Turns out the flag is sent as the following response by the server.
+							</p>
+							<p>
+								<a href="attachments/wise.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									wise.py
+								</a>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{1ts_OuTRagEous_itS_unFA1r}</div>
+						</div>
+					</div>
+					<!----------** Zippy **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Zippy - <b>184 points</b></h3>
+							<span class="badge badge-info ml-3 category">forensics</span>
+						</div>
+						<div class="card-body">
+							<p>This zip file seems to be corrupted, any chance you could recover the flag inside?</p>
+							<a href="challenges/zippy_flag64.zip">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								zippy_flag64.zip
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								The corrupted ZIP file opens just fine on my computer, and apparently some versions of Android as well, but let's look at it from the perspective of a broken archive. A great tool for inspecting ZIP files is <b>zipdetails</b> because it provides an in-depth analysis of a given file, down to the byte.
+							</p>
+							<p>
+								Running <code>zipdetails zippy_flag64.zip</code> reveals a lot of information about the structure of the corrupted file. Notice how the compressed and uncompressed lengths are huge for flag.txt while the payload is clearly smaller than 0xFFFFFFFF bytes.
+								<img src="images/challenge-zippy.png">
+								What if we just extract the contents of the payload (i.e. the file) at the correct offset and length, and then decompress it manually? It would work because we know the compression used is Deflate, which is the standard compression method in PKZIP and should be included in the zlib library.
+							</p>
+							<p>
+								Lucky for us, Python has a zlib module that implements Inflate (the reverse of Deflate) and can help decompress the payload and retrieve the contents of the file. Here's a rundown of the Python code to solve this challenge:
+								<pre>
+<span class="py-pre">Python 3.7.2 (default, Jan 17 2019, 12:26:41)
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.</span>
+<span class="py-pre">>>></span> <span class="py-kw">with</span> <span class="py-fn">open</span>(<span class="py-str">'zippy_flag64.zip'</span>, <span class="py-str">'rb'</span>) <span class="py-kw">as</span> f:
+<span class="py-pre">...</span>     data = f.<span class="py-fn">read</span>()
+<span class="py-pre">...</span>
+<span class="py-pre">>>></span> start, end = <span class="py-int">0x3a</span>, <span class="py-int">0x66</span>   <span class="py-cmt"># Info taken from zipdetails output</span>
+<span class="py-pre">>>></span> payload = data[start:end] <span class="py-cmt"># Payload containing flag.txt contents</span>
+<span class="py-pre">>>></span> <span class="py-kw">import</span> zlib
+<span class="py-pre">>>></span> zlib.<span class="py-fn">decompress</span>(payload, <span class="py-int">-15</span>) <span class="py-cmt"># https://stackoverflow.com/q/1089963</span>
+<span class="py-str">b'HackTrinity{g0ttA_l0ve_pkz1p_l1m1tati0ns}\n'</span></pre>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{g0ttA_l0ve_pkz1p_l1m1tati0ns}</div>
+						</div>
+					</div>
+					<!----------** Flow **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Flow - <b>191 points</b></h3>
+							<span class="badge badge-info ml-3 category">exploit</span>
+						</div>
+						<div class="card-body">
+							<p style="font-weight: bold">NB: challenge port may be blocked on college networks</p>
+							<p>I set up a server so I can check on the flag for this challenge.</p>
+							<p>You can find it at ht3.hacktrinity.me:1337 (to connect using netcat, run <code>nc ht3.hacktrinity.me 1337</code>)</p>
+							<p>Don't worry, it's password-protected, so you won't be able to get it.</p>
+							<p>Here's the program running on the server (not that it'll help you since I've replaced the password and flag with rubbish):</p>
+							<a href="challenges/flow.reference">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								flow.reference
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								We're given a file that has an unusual extension. Run <code>file flow.reference</code> to find out what kind of file it is.
+								<img src="images/challenge-flow-1.png">
+								Cool, it's a regular Linux 64-bit ELF binary, let's execute it and see what it does.
+								<img src="images/challenge-flow-2.png">
+								It asks for a password, which we don't know yet, but playing around with the input we can produce a segmentation fault by entering a large number of characters. This is usually an indicator of a buffer overflow, probably because the input function <code>gets</code> was used instead of <code>fgets</code>.
+							</p>
+							<p>
+								Let's see what <b>gdb</b> has to say about this.
+								<img src="images/challenge-flow-3.png">
+								Aha! There is our <code>gets</code>, as suspected. The reason it is insecure (and even has its own section in the man page to tell you about this) is because it can write more data than the size of the allocated buffer it is writing to. In order to actually exploit this vulnerability, we have to find the offset at which our input produces a segfault. Playing around with the input, you will find that entering more than 40 characters is enough to trigger it.
+							</p>
+							<p>
+								The segmentation fault occurs because our input overwrites a value on the stack that acts as the return pointer for the main function. Then when it tries to pop the stack and jump to the address we overwrote, it will crash because the address is probably filled with garbage data or the wrong machine code instructions.
+							</p>
+							<p>
+								Going back to <b>gdb</b>, notice there is a call to <code>printf</code> with a parameter loaded from 0x4007e078. Similarly a call to <code>puts</code> is made just above with a parameter loaded from 0x4007e048. Let's check out what is at those addresses.
+								<img src="images/challenge-flow-4.png">
+								Interesting, so they are different branches of execution in the main function. Entering the correct password would lead to the <code>printf</code> call which will print the flag, but what can be done without knowing the password?
+							</p>
+							<p>
+								Think about it, we have control of the stack and we know which branch to take to print the flag. All that's left is to redirect code execution to reach that part. The address we want to jump to when returning from <code>main</code> should be the address at <code>main[+97]</code> as that is where the flag is loaded as a parameter.
+							</p>
+							<p>
+								Run <code>python -c 'print(" " * 40 + "\x56\x1c\x00\x40")' &gt; exploit</code> to write 40 characters and the desired address <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">(in litte endian form)</a> to a file. Then send its contents as input to the binary and see if the exploit works.
+								<img src="images/challenge-flow-5.png">
+								Nice, we got the "flag" locally and now it's time to trigger it on the server and get the real one. Run <code>nc ht3.hacktrinity.me 1337 &lt; exploit</code> to win a flag!
+								<img src="images/challenge-flow-6.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{Buff3r_0verfl0ws_ar3_fuN}</div>
+						</div>
+					</div>
+					<!----------** Piconvert **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Piconvert - <b>213 points</b></h3>
+							<span class="badge badge-info ml-3 category">web/exploit</span>
+							<div class="n-o-f-l-a-g">I did not complete this challenge.</div>
+						</div>
+						<div class="card-body">
+							<p>Check out this cool image converter I made!</p>
+							<p><em>Note: You should be able to find the image converter website by <code>nmap</code>ing your allocated subnet</em></p>
+							<a href="challenges/piconvert23.ovpn">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								Download OpenVPN config for this challenge
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								After connecting to the VPN and scanning the network with <b>nmap</b>, there is one device that's reported as active. Let's check it out.
+								<img src="images/challenge-piconvert-1.png">
+								The webpage has a simple interface for image conversion. Uploading a JPEG/PNG/GIF file converts it successfully, but trying to upload a different format produces an error.
+								<img src="images/challenge-piconvert-2.png">
+								The idea here is to get the flag from the server without knowing the format. One way to do this is to find an RCE (Remote Code Execution) vulnerability, and then look for the flag on the filesystem. It helps to know that the website is "<em>Powered by ImageMagick</em>" because it has had a long history of serious vulnerabilities.
+							</p>
+							<p>
+								One that comes to mind is called ImageTragick, which has <a href="https://imagetragick.com" target="_blank">its own website</a> that gives details and code snippets of exploits. The first example on the home page is an RCE which is just what we need.
+							</p>
+							<p>
+								Under the hood, the <code>convert</code> command from the ImageMagick suite uses <b>curl</b> to send requests if a remote image is specified in an MVG (Magick Vector Graphics) script. This can be exploited by modifying the URL field to add regular shell commands, since the input is not sanitised and is simply inserted into <code>curl -s -k -L -o &#8230; "<b>URL_HERE</b>" &#8230;</code> where you could add your own quotation marks and inject code.
+							</p>
+							<p>
+								A classic <b>netcat</b> reverse shell can be achieved with <code>nc -e something &#8230;</code> which runs the executable <em>something</em> across the remote connection, so <code>/bin/sh</code> would send the default shell of the system. Here is how to encorporate this into an MVG script:
+								<img src="images/challenge-piconvert-3.png">
+								We also need to bypass the file format filter, which is easy enough and only involves changing the extension to <em>.jpg</em> or another accepted one.
+							</p>
+							<p>
+								Once that's done, start a listener with <code>nc -lkp 1234</code> (without the <code>-p</code> flag on Mac and BSD) and upload the exploit script to hopefully get a shell.
+								<img src="images/challenge-piconvert-4.png">
+								It worked! Now it's time to find out where the flag is hidden. Wandering around the filesystem reveals the flag in plain sight.
+								<img src="images/challenge-piconvert-5.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{RcE_1s_tRAg1cK}</div>
+						</div>
+					</div>
+					<!----------** Call me maybe **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Call me maybe - <b>217 points</b></h3>
+							<span class="badge badge-info ml-3 category">phreaking</span>
+						</div>
+						<div class="card-body">
+							<p>Miers Porgan has been caught hacking into voicemails again.</p>
+							<p>Can you figure out how he got into mine?</p>
+							<p><code>+353 76 680 3900</code></p>
+							<p>NB: this is a VoIP number - can be expensive to call on some providers. Check your rates before dialing and always ask the billpayer's permission ;)</p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								If you call the number using a Voice over IP (VoIP) account, a female voice will answer with "please enter your two-digit voicemail PIN" after which you are given about half a minute to get the PIN right.
+							</p>
+							<p>
+								If entered correctly, the voice would respond with the flag. I'm sure there are better ways to hack these voicemails than the way I did, but a random bashing of numbers worked for me :P
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{12986876283467881467242}</div>
+						</div>
+					</div>
+					<!----------** Not Forgotten **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Not Forgotten - <b>231 points</b></h3>
+							<span class="badge badge-info ml-3 category">forensics</span>
+						</div>
+						<div class="card-body">
+							<p>A friend of mine keeps a portable Linux install on his USB drive.</p>
+							<p>I passed by the other day and saw a flag on his screen, which he quickly alt-tabbed away from.</p>
+							<p>Since I really want that flag, I grabbed the drive and made an image of it while he was off at lunch, but I can't seem to find any sign of a flag. Can you help?</p>
+							<a href="https://mega.nz/#!pi5wkS5Q!V2dcuGDlRHbsZb8NXDTixotgEMiK-uVgE4rjaGgWhx4" target="_blank">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								disk.img.tar.gz &nbsp; (154.1 MB)
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								Here we have a gzipped tar archive which, when uncompressed using <code>tar -xzf disk.img.tar.gz</code>, extracts into a large disk image file. Running <code>file disk.img</code> to identify its contents says that it is an x86 boot sector with an extended partition table and one partition. This suggests that we're dealing with a bit-by-bit copy of a hard drive of some kind.
+							</p>
+							<p>
+								In this case we need to identify what format the flag is in. If one could "alt-tab away" from it, it may be some kind of media file. For tasks like this, <b>foremost</b> is a great tool when it comes to extracting files from within other files. Running <code>foremost disk.img</code> and inspecting the <em>output</em> folder, you will eventually find this image:
+								<img src="images/challenge-nf.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{BE_CAR3FUL_WHAT_YOU_LEAV3_BEH1ND}</div>
+						</div>
+					</div>
+					<!----------** Book of Kells 2 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Book of Kells 2 - <b>237 points</b></h3>
+							<span class="badge badge-info ml-3 category">darkweb/forensics</span>
+						</div>
+						<div class="card-body">
+							<p>The purpose of Tor Hidden Services is to hide the IP address of the server that is hosting the website. However, can you identify the real IP address the forum software is running on?</p>
+							<p>Hint: SSRF</p>
+							<p><a href="http://uxpkyayer253dtcl.onion" target="_blank">http://uxpkyayer253dtcl.onion</a></p>
+							<p>Enter the flag as an IPv4 address, e.g. <code>1.33.4.2</code></p>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This challenge was fun to solve. It hints at Server Side Request Forgery (SSRF), which is one of several viable methods for finding a Tor hidden service's real IP address. A lot of "onion" forums were deanonymised in this way.
+							</p>
+							<p>
+								So how does it work? Well, forums allow users to set their profile image. You could either choose to upload a picture, or you could provide a link to one via a web address. The URL would then be requested by the server, fetching the image and setting it as the user's profile picture. How does this help find the real IP of the server?
+							</p>
+							<p>
+								Imagine you own a web server (technically you do, your home router) and you're hosting an image on it, allowing public access and logging the IP address of every connection made. Could you not link to said image on your profile page of the Book of Kells forum? Of course you could!
+								<img src="images/challenge-kells2-1.png">
+								<img src="images/challenge-kells2-2.png">
+								<img src="images/challenge-kells2-3.png">
+								<img src="images/challenge-kells2-4.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">95.179.146.250</div>
+						</div>
+					</div>
+					<!----------** Nat a flag **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Nat a flag - <b>283 points</b></h3>
+							<span class="badge badge-info ml-3 category">networking</span>
+						</div>
+						<div class="card-body">
+							<p style="font-weight: bold">NB: Networking challenges will not work on some college networks - try your home network instead. Make sure UDP ports 2000 and up are usable for outbound traffic.</p>
+							<p>A guy I know keeps his flags on a private webserver inside his home network. I really want those flags, any chance you could help? (For this challenge you can assume that your allocated subnet is "the internet")</p>
+							<a href="challenges/nataflag23.ovpn">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								Download OpenVPN config for this challenge
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This was a very fun challenge, it took me a lot of time and research, and finding the flag felt very rewarding. The reason it took quite long was because this type of challenge is extremely rare for a CTF and the solution doesn't come to mind very quickly.
+							</p>
+							<p>
+								Here we need to get inside a home network and retrieve the flag from a webserver, usually running on port 80 or 443 for HTTP or HTTPS respectively. In an ideal scenario, a home network is perfectly secure from foreign attacks because the router doesn't allow incoming connections unless they were initiated from inside the network. However, things are never perfect.
+							</p>
+							<p>
+								Connecting to the VPN and scanning the network with <code>nmap -sV 10.137.27.0/24</code> shows a device running 2 services:
+								<ul>
+									<li>Port 80 running darkhttpd version 1.12</li>
+									<li>Port 5431 running MiniUPnPd version 2.1</li>
+								</ul>
+							</p>
+							<p>
+								Opening a web browser and navigating to the device's IP address shows a fake home router page, listing some key information needed to help exploit the network later.
+								<img src="images/challenge-nat-1.png">
+								The curious protocol in question is UPnP, which stands for Universal Plug'n'Play and is used by many smart-devices like TVs and gaming consoles to request port forwarding rules automatically and without user interaction. Surely that must be a way into the network.
+							</p>
+							<p>
+								If an outsider can set port up forwarding rules on a home network, they can access any interal device with relative ease. If the MiniUPnPd instance was poorly configured, it would be fairly simple to forward port 80 onto the internally connected device. Luckily there is <b>upnpc</b>, a UPnP command-line client counterpart to the server.
+							</p>
+							<p>
+								The command I needed to run to create a rule that forwards port 8080 of the router to port 80 of the internal device is <code>upnpc -u http://10.137.27.195:5431/rootDesc.xml -m tap0 -a 10.137.27.178 80 8080 tcp</code>. The path <code>/rootDesc.xml</code> refers to an XML document on the server that advertises the services it offers and how to access them, including device discovery and creating port mapping rules. The command sends a packet to the server that looks like this:
+								<img src="images/challenge-nat-2.png">
+								You can see how this looks similar to an HTTP request, which it basically is but with a slightly more verbose syntax. (Ignore the different IP address, I took the screenshot later in the day.)
+							</p>
+							<p>
+								After setting the port forwarding rule, I just went to port 8080 on the router and found the flag in a text file.
+								<img src="images/challenge-nat-3.png">
+								<img src="images/challenge-nat-4.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{tH3_nAT_typ3_1S_0pen}</div>
+						</div>
+					</div>
+					<!----------** Denovo 3 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Denovo 3 - <b>300 points</b></h3>
+							<span class="badge badge-info ml-3 category">reversing</span>
+						</div>
+						<div class="card-body">
+							<h3>NOTE: The previous x86_64 version of this challenge was incorrect - the solution should be the same but the <em>game protected by Denovo is different</em>!</h3>
+							<p>When the "encryption" behind Denovo v2 fell almost as quickly as v1, management decided to fire all of the engineers and start over.</p>
+							<p>After months of work, Denovo v3 is finally for prime-time. Did the new team's efforts pay off?</p>
+							<p>Both binaries below are generated from the same code, one is built for ARM platforms and one for x86-64. You can choose whichever you're most comfortable with :)</p>
+							<p>NB: flag is not in the usual HackTrinity{&lt;flag&gt;} format</p>
+							<a href="challenges/denovo_v3.tar.gz"><i class="fas fa-file-download mr-1" aria-hidden="true"></i>denovo_v3.tar.gz</a><br>
+							<a href="challenges/denovo_v3_x86_64.tar.gz"><i class="fas fa-file-download mr-1" aria-hidden="true"></i>denovo_v3_x86_64.tar.gz</a><br>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								We are given a gzipped tarball containing an executable and 2 shared object files. Without knowing what the challenge is about, we can already tell that some parts involve cryptography because the object files are named after the RC4 encryption algorithm.
+							</p>
+							<p>
+								Running the binary shows the same output as the other Denovo apps. Let's open the main file in a disassembler and have a look at the flow of the program.
+								<img src="images/challenge-denovo3-1.png">
+								Looks fairly simple to begin with, it asks the user to enter a password and makes sure that the length of the user input is 0x22 (34) and then continues to the <code>denovo_layer0</code> function, passing <code>var_30</code>'s address (user input), <code>argc</code> and <code>argv</code> as parameters.
+								<img src="images/challenge-denovo3-2.png">
+								It seems that <code>denovo_layer0</code> has a lot going on. Let's break it down:
+								<ol>
+									<li>User input is moved to <code>var_168</code></li>
+									<li>A string with the process ID of the current program and "layer1" is written to <code>var_110</code>, e.g. "/denovo_1337_layer1"</li>
+									<li>The user defined function <code>layer_key</code> does something to <code>var_168</code> and possibly stores the result in <code>var_140</code></li>
+									<li><code>rc4_dlopen</code> is called with <code>var_110</code>, <code>var_140</code> and what look to be 2 memory addresses</li>
+									<li>If <code>var_150</code> (the return value) is not 0 then <code>dlsym</code> tries to dynamically load the file descriptor <code>var_150</code></li>
+									<li>The return value of <code>dlsym</code> is called with the original user input <code>var_168</code> (twice), <code>argc</code>, <code>argv</code> and "layer1"</li>
+									<li>Finally <code>rc4_dlclose</code> is run, probably to clean up open file descriptors</li>
+								</ol>
+							</p>
+							<p>
+								What's interesting is that the flow here hinges on a modified version of the user input. Let's have a look at what's inside the <code>layer_key</code> function.
+								<img src="images/challenge-denovo3-3.png">
+								The first argument is stored in <code>var_18</code> and is loaded with the first 2 bytes from the user input. Then a loop of 22 iterations tests something and writes an ASCII <code>-</code> or <code>0</code> to <code>var_18</code> depending on the outcome. So why is this function zeroing out parts of the user inputted serial key? Hmm...
+							</p>
+							<p>
+								This is where dynamic analysis comes in handy. Run <b>gdb</b> and set a breakpoint at the <code>layer_key</code> function, then check the value of <code>rdi</code> and <code>rsi</code>.
+								<img src="images/challenge-denovo3-4.png">
+								<img src="images/challenge-denovo3-5.png">
+								So the serial key was zeroed out after the 2nd character, but why is that? Let's investigate further by looking at the contents of <code>rc4_dlopen</code>.
+							</p>
+							<p>
+								Load the shared object file <code>librc4_ext.so</code> in a disassembler and inspect that function.
+								<img src="images/challenge-denovo3-6.png">
+								I simplified it and saved it in a text file because <b>Hopper</b> did a bad job.
+								<img src="images/challenge-denovo3-7.png">
+								I renamed a few things, so here is what's happening:
+								<ol>
+									<li><code>TARGET</code> is the string produced by sprintf, and <code>STRIPPED</code> is the modified serial key</li>
+									<li><code>DATA1</code> and <code>DATA2</code> are the memory addresses from earlier</li>
+									<li><code>SHMEM</code> is a shared memory object stored in <code>TARGET</code></li>
+									<li><code>MAPPED</code> is a writeable allocated memory region, the same size as <code>DATA2</code></li>
+									<li><code>rc4_encrypt</code> is where the magic happens</li>
+									<li><code>validate_elf</code> checks the state of <code>MAPPED</code></li>
+									<li>Then the function ties its loose ends and tries to use <code>dlopen</code> to load the mapped memory region as a dynamic library</li>
+									<li>Lastly, it returns either the file descriptor from <code>dlopen</code> or zero if an error occurs</li>
+								</ol>
+							</p>
+							<p>
+								Let's have a look at <code>validate_elf</code> and see what it's all about.
+								<img src="images/challenge-denovo3-8.png">
+								All it does is check if <code>MAPPED</code> starts with 0x464c457f which are the magic bytes of an ELF file. This is starting to make some sense, so let's keep investigating.
+							</p>
+							<p>
+								Inside <code>rc4_encrypt</code> in <code>librc4.so</code> we see what looks like a standard implementation of the <a href="https://en.wikipedia.org/wiki/RC4" target="_blank">RC4 encryption</a> algorithm. But wait a minute, the modified serial key is being used as the seed that generates the encryption key. And now we know that the hex numbers <code>DATA1</code> and <code>DATA2</code> are the offset and length of the encrypted data. This is great news for us and terrible news for Denovo.
+							</p>
+							<p>
+								You see, RC4 is a stream cipher meaning that each encryption operation happens sequentially, one byte at a time. In RC4 each byte of the key is bitwise XORed with each byte to be encrypted (or decrypted, makes no difference in an XOR operation). The RC4 algorithm simply defines how the key stream is generated, but the rest is just XOR and is nothing to worry about.
+							</p>
+							<p>
+								Back to the task at hand, we may already know what's going on. Let's take a reasonable guess and say that:
+								<ul>
+									<li>A key stream is generated from our serial key, which was modified to only retain the first 2 letters</li>
+									<li>The data at offset <code>DATA1</code> of length <code>DATA2</code> is XORed with the key stream</li>
+									<li>The function <code>validate_elf</code> checks if the decrypted data is a valid ELF binary</li>
+									<li>If the tests have passed, the decrypted data is loaded as a dynamic library and called from within <code>denovo_layer0</code></li>
+									<li>Judging by the "layer1" string from before, there may be many more layers</li>
+								</ul>
+							</p>
+							<p>
+								Let's test this theory out. I wrote a Python script to extract the encrypted data and attempt to decrypt it with RC4 by trying all 26*26 (676) letter combinations followed by zeros. If the result passes the test at <code>validate_elf</code> then this theory checks out. Since this is a stream cipher, we only need to decrypt the first four bytes to check if a key works.
+								<img src="images/challenge-denovo3-9.png">
+								Wonderful! It seems to have worked. Let's check the output file <code>denovo_layer1</code> and see if it's a real ELF binary.
+								<img src="images/challenge-denovo3-10.png">
+								That's great news! And all occurrences of <em>layer1</em> got upgraded to <em>layer2</em> which confirms the theory of multiple layers.
+							</p>
+							<p>
+								So what is the next step? Well, we can assume that the 2nd layer also needs to be decrypted. Except this time the offset of the encrypted data is different. Let's use <b>objdump</b> to check the symbols in the original file &mdash; <code>denovo_v3</code> &mdash; and see if anything stands out.
+								<img src="images/challenge-denovo3-11.png">
+								Cool, the constants we used to get the offset and size of the encrypted data are stored in <code>_binary_layer1_dnv_start</code> and <code>_binary_layer1_dnv_size</code>. And notice how the section <code>.denovo</code> spans from <code>_binary_layer1_dnv_start</code> to <code>_binary_layer1_dnv_size</code>, it means we can extract the data just by looking for this section in the binary.
+							</p>
+							<p>
+								To ease the process of searching through a complex file format, I employed a popular Python module called <b>pwntools</b> (which only supports Python 2 at the time of writing).
+								<img src="images/challenge-denovo3-12.png">
+								It found <code>.denovo</code> without any problems, so let's check if <code>denovo_layer1</code> has the same section as well.
+								<img src="images/challenge-denovo3-13.png">
+								Great, this will make the next part a whole lot easier. But what about the key streams for the subsequent layers? For now we will assume that we need to brute force 2 characters at a time, adding to the previous correct guess as we move deeper into the layers. If this turns out to be wrong, no big deal.
+								<img src="images/challenge-denovo3-14.png">
+								This script attempts to brute force all 15 layers, as there are 30 letters in total and we need to take on 2 at a time. Running it produces 15 files named <code>layer1</code> through to <code>layer15</code> and also outputs the whole serial key. Awesome!
+							</p>
+							<p>
+								Now let's look at what Denovo has been hiding from us in the bottom layer.
+								<img src="images/challenge-denovo3-15.png">
+								Quite a lot, it seems. What's happening here is:
+								<ol>
+									<li>A temporary directory is created with the path <code>/tmp/den</code></li>
+									<li>Some gzipped data is written to <code>/temp/den/doom.html.gz</code></li>
+									<li>Then the data is uncompressed into <code>/temp/den/doom.html</code></li>
+									<li>And finally it is opened in a web browser</li>
+								</ol>
+							</p>
+							<p>
+								We know what the offset and size of the data is by looking at the call to <code>fwrite</code>, and then we can extract the data ourselves. Note that the starting address of <code>_init</code> is 0x1000 so we must remove that from our offset.
+								<img src="images/challenge-denovo3-16.png">
+								Now let's open the output file <code>doom.html</code> in a web browser.
+								<img src="images/challenge-denovo3-17.png">
+								<img src="images/challenge-denovo3-18.png">
+								Alright, impressive! A DOSBox running the game DOOM in a Javascript sandbox. I guess we must play to find the flag. Hit enter a few times to immerse yourself in a world of 8-bit ultra-realistic gaming.
+								<img src="images/challenge-denovo3-19.png">
+								Look to the left to see a door and a lever beside it. Interact with the level using the space bar and enter the unlocked room to see the one and only... flag!
+								<img src="images/challenge-denovo3-20.png">
+								Wow, what a challenge! In reality most of the "working stuff out" took me several days, but that was one hell of a learning experience.
+							</p>
+							<p>
+								One thing I found that could be improved upon was removing the file I/O overhead by cracking the serial key and storing the layers in memory instead of saving them to a file with each iteration.
+							</p>
+							<p>
+								I tested this by hardcoding the offsets based on previous tests and modifying the script slightly. The result was a much faster Denovo 3 serial key brute forcer.
+								<img src="images/challenge-denovo3-21.png">
+							</p>
+							<p>
+								<a href="attachments/denovo3.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									denovo3.py
+								</a>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{d1D_tH3_RC4_Onion_make_y0u_cry}</div>
+						</div>
+					</div>
+					<!----------** Trinity Ball 2 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Trinity Ball 2 - <b>323 points</b></h3>
+							<span class="badge badge-info ml-3 category">web</span>
+							<div class="n-o-f-l-a-g">I did not complete this challenge.</div>
+						</div>
+						<div class="card-body">
+							<p>The ticket site admins have fixed the flaw in the site. Can you still get an extra ticket?</p>
+							<a href="https://trinityball2.hacktrinity.me" target="_blank">https://trinityball2.hacktrinity.me</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								If you remember the first Trinity Ball challenge, this one is basically the same. The only difference being that the server responds with <code>{"status":"too_many_tickets"}</code> when manually requesting <code>/addItemToBasket.php?id=1</code> more than once.
+								<img src="images/challenge-tball2-1.png">
+							</p>
+							<p>
+								One possible attack in this scenario would be a race condition, where we perform several actions in quick succession and hope that a malicious one succeeds. In this case, we need to find a way to send multiple simultaneous requests to the server using the same cookie. This can be done with the magical bitwise AND operator <code>&amp;</code> in both a JavaScript console and a shell.
+								<img src="images/challenge-tball2-2.png">
+								<img src="images/challenge-tball2-3.png">
+								<img src="images/challenge-tball2-4.png">
+								<img src="images/challenge-tball2-5.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{raced_ya_and_all_I_got_was_this_€91_coronas_ticket}</div>
+						</div>
+					</div>
+					<!----------** PHPOurAdmin **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">PHPOurAdmin - <b>347 points</b></h3>
+							<span class="badge badge-info ml-3 category">web</span>
+							<div class="n-o-f-l-a-g">I did not complete this challenge.</div>
+						</div>
+						<div class="card-body">
+							<p>As part of our regular scanning, we found this admin interface on our network open to the world.</p>
+							<p>Can you read <code>/tmp/flag.txt</code>?</p>
+							<a href="https://phpouradmin.hacktrinity.me" target="_blank">https://phpouradmin.hacktrinity.me</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								We are presented with a phpMyAdmin instance, which is a client for MySQL/MariaDB in a web interface, and we're supposed to get the flag from the webserver that's hosting it.
+								<img src="images/challenge-poa-1.png">
+							</p>
+							<p>
+								One of the "features" of MySQL is the ability to load files from the client. No, not your computer, but the client itself. It's called <em>LOCAL INFILE</em> and it follows a very simple sequence of interactions:
+								<img src="images/challenge-poa-2.png">
+								The MySQL docs also has a <a href="https://dev.mysql.com/doc/internals/en/com-query-response.html#packet-Protocol::LOCAL_INFILE_Request" target="_blank">practical example</a> that shows the packet structure. Luckily, we don't need to endure the painful process of installing a MySQL server, but we do need a publicly accessible VPS to abuse this feature. (You could also do this locally, but you would need to set up port forwarding.)
+							</p>
+							<p>
+								There's a GitHub project called <a href="https://raw.githubusercontent.com/Gifts/Rogue-MySql-Server/master/rogue_mysql_server.py" target="_blank">Rogue MySql Server</a> that simulates a MySQL server by crafting similar packets. It's great because it implements the <em>LOCAL INFILE</em> request &mdash; all we need is to specify which file we want from the client, which is <code>/tmp/flag.txt</code> in this case.
+								<img src="images/challenge-poa-3.png">
+								I modified line 144 to ensure that every response to the client will be a request for the flag file. This helped in preventing an error message that kept coming up when trying to login:
+								<img src="images/challenge-poa-4.png">
+								Run the modified script, then "login" to your server through the phpMyAdmin web portal (use any username, no password needed) and then check the log file <code>mysql.log</code> created by the script to view the response, and there you will find the flag.
+								<img src="images/challenge-poa-5.png">
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{OhNoMySQLClientDidAnOopsie}</div>
+						</div>
+					</div>
+					<!----------** Denovo 4 **---------->
+					<div class="card">
+						<div class="card-header challenge-header">
+							<h3 class="card-title">Denovo 4 - <b>411 points</b></h3>
+							<span class="badge badge-info ml-3 category">reversing</span>
+							<div class="n-o-f-l-a-g">I did not complete this challenge.</div>
+						</div>
+						<div class="card-body">
+							<p>All DRM falls eventually, and Denovo management is finally coming to terms with that.</p>
+							<p>But that doesn't mean they're finished! Denovo v4 is ready to go, this time with 100% more chance of being uncrackable!</p>
+							<p><em>(PR have yet to learn their lesson...)</em></p>
+							<a href="challenges/denovo_v4">
+								<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+								denovo_v4
+							</a>
+						</div>
+						<div class="card-footer solution">
+							<p>
+								This last challenge comes with a single ELF binary that produces the same output as the other Denovo challenges. Let's check it out in <b>Hopper</b> and take a look at what's inside.
+								<img src="images/challenge-denovo4-1.png">
+								Interesting, <code>main</code> calls <code>eso_new</code> with <code>__TMC_END__</code> and continually calls <code>eso_next</code> on the return value. Let's find where <code>__TMC_END__</code> is located.
+								<img src="images/challenge-denovo4-2.png">
+								Looks like this is the ESO program that the error message in <code>main</code> was referring to. Take note of the offset because we might need to extract the data at some point. The next important part to look at is <code>eso_new</code>.
+								<img src="images/challenge-denovo4-3.png">
+								It's a little complicated, so let's simplify it a bit.
+								<img src="images/challenge-denovo4-4.png">
+								The function expects an ESO program based on the signature at the start of the input data. It then allocates some memory and fills it with offsets from <code>DATA</code> in the following manner, starting from an offset of 11 bytes:
+								<ol>
+									<li>First it reads until a null byte (<code>0x00</code>), so it may be looking for a string</li>
+									<li>Then 1 byte is read, which appears to be either <code>0</code> or <code>1</code></li>
+									<li>Lastly, judging by the increase of <code>temp</code> by 6 and starting offset of <code>temp + 2</code>, a 4 byte value is parsed</li>
+									<li>This process is repeated a number of times specified by <code>DATA[9]</code> (i.e. <code>LENGTH</code>)</li>
+								</ol>
+							</p>
+							<p>
+								The next part also iterates a <code>LENGTH</code> number of times and does the following with every loop:
+								<ol>
+									<li>If the byte from <em>#2</em> above is <code>1</code>, zero out a number of bytes specified by <em>#3</em> above</li>
+									<li>Else if it's a <code>0</code>, copy <em>X</em> bytes from <code>DATA</code> to <code>Mem1</code> where <em>X</em> is the number from <em>#3</em> above</li>
+									<li>Increase the write offset by the number of bytes written</li>
+								</ol>
+							</p>
+							<p>
+								Then finally <code>Mem1</code> is returned. To understand more closely the kind of data we are working with, let's extract the ESO program from <code>__TMC_END__</code> and analyse it. Maybe if we're lucky it could be found in a <code>.denovo</code> section like in the previous Denovo challenge.
+								<img src="images/challenge-denovo4-5.png">
+								Great, we can just copy the <code>.denovo</code> section into a file, but wait... it says <code>_binary_layer0_bin_end</code>. Looks like this challenge, just like Denovo 3, involves layers. Let's have a look at this first layer then, which is just the contents of <code>.denovo</code>.
+								<img src="images/challenge-denovo4-6.png">
+								We've established how an ESO program is parsed by looking at <code>eso_new</code>, so now let's actually view the raw bytes and try to figure out what's going on.
+							</p>
+							<p>
+								The magic bytes <em>ESO</em> identify the file type. Then we see some bytes that don't quite make sense, we'll come back to them in a bit. Remember that <code>temp</code> in <code>eso_new</code> started at <code>11</code>, so let's follow the first loop's steps from this offset. A sequence of bytes is read until a null byte is reached. Then one byte is checked for <code>1</code> or <code>0</code>, and 4 bytes are read to determine the copied data size for the next loop.
+							</p>
+							<p>
+								What immediately stands out is how large the 4 byte value is &mdash; there's no way 0x7e000000 (2113929216) is the real size, that's more than 2 GB. Then it dawned on me... the values must be interpreted as big endian, and this would usually carry through the whole file.
+							</p>
+							<p>
+								Let's continue with the first loop in <code>eso_new</code>. The 9th byte in the file should tell us the number of iterations, but since the value is <code>0</code> we can only assume it is 2 bytes long, so then <code>5</code> is the correct value. This also matches how many strings can be found at the top of the file that start with <code>.</code> and end in a null byte, as well as being followed by 5 bytes of which the first is either <code>1</code> or <code>0</code>.
+							</p>
+							<p>
+								Thus far the file structure of an ESO program strongly resembles an ELF binary, which is also parsed in sections. I think we're getting somewhere. We have section names, sizes, and a value that decides whether or not to write the section's data to the allocated memory. And we know the data is interpreted in big endian format.
+							</p>
+							<p>
+								So where do we go from here? I think that looking at the section names, we may be able to figure out what to do. We have:
+								<ul>
+									<li><code>.data</code>, 0x7e (126) bytes</li>
+									<li><code>.s_offset</code> 0x4 (4) bytes</li>
+									<li><code>.stack</code> zero bytes due to a non-zero value in the first loop (see <em>#2</em> above)</li>
+									<li><code>.layer</code> 0x36c0 (14016) bytes</li>
+									<li><code>.text</code> 0x324 (804) bytes</li>
+								</ul>
+								That looks about right. Add the sizes together, plus the 72 bytes of the header we covered so far, and we get the size of this ESO file. This means the sections can be read sequentially and extracting them is trivial, but now we must figure out what to do with them.
+							</p>
+							<p>
+								Clearly <code>.layer</code> must be the first of many layers in this challenge. Looking at the ASCII strings after the header, <code>.data</code> is probably the same as <a href="https://www.tutorialspoint.com/assembly_programming/assembly_basic_syntax.htm" target="_blank">the section in assembly</a> and defines some constants. Now what about <code>.s_offset</code>? It's size is only 4 bytes. The previous Denovo challenge had us brute forcing the serial key 2 characters at a time, so maybe this section contains the offset of the character(s) to brute force in the serial key. If the value is less than the length of the serial key then we're likely on the right track.
+								<img src="images/challenge-denovo4-7.png">
+								The value is 0x1c (28) which is indeed within the range of the serial key, so we'll go along with that.
+							</p>
+							<p>
+								In Denovo 3 there was basic XOR encryption using a keystream generated by the RC4 algorithm, but we don't know what encryption is used here, if any. Let's extract the contents of <code>.layer</code> and look deeper.
+								<img src="images/challenge-denovo4-8.png">
+								Reading this in the same manner as <code>eso_new</code> parses ESO programs, notice how the data immediately after the 11th byte follows a similar pattern as the ESO file we just looked at. If we look at the first byte at position 0xb (11), which is <code>0x7b</code>, we can see it being repeated 4 times at relatively similar offsets as in the ESO file. That's likely the <code>.</code> at the start of the section names. Also, <code>0x55</code> comes up several times in a row, so those are probably null bytes.
+							</p>
+							<p>
+								The fact that the values are repeated suggests that a linear encryption scheme is being used. Maybe another XOR? Let's verify this hypothesis by XORing <code>0x7b</code> with <code>0x2e</code> (ASCII <code>.</code>) and seeing if it equals <code>0x55</code> (ASCII <code>U</code>), since anything XORed with a null byte stays the same. If it works, we can then XOR the whole file with <code>0x55</code> and decrypt this layer.
+								<img src="images/challenge-denovo4-9.png">
+								Awesome! We've confirmed that the encryption is XOR and can hopefully continue this layer by layer. The character <code>U</code> was used to decrypt the first layer, and we must find the correct character used to decrypt the others. Also the <code>.s_offset</code> value (4 bytes starting at 0x60) is again less than 34, which could indeed mean that the XOR key is at that offset in the serial key.
+							</p>
+							<p>
+								The serial key has 30 letters in it, so we have to repeat this process another 29 times. Let's script an ESO parser that tries to XOR all uppercase letters with each layer until it yields a valid ESO program. Here's the result:
+								<img src="images/challenge-denovo4-10.gif">
+								I saved the last layer in a file called <code>denovo_v4.eso</code> so let's take a look at it.
+								<img src="images/challenge-denovo4-11.png">
+								Nice, we've cracked the program. Unfortunately there isn't a Doom level hidden inside, but there is a <a href="https://www.youtube.com/watch?v=BWfoBbeYAOQ" target="_blank">YouTube video</a> so let's check it out. Lo and behold, the flag is in the description.
+								<img src="images/challenge-denovo4-12.png">
+							</p>
+							<p>
+								<a href="attachments/denovo4.py">
+									<i class="fas fa-file-download mr-1" aria-hidden="true"></i>
+									denovo4.py
+								</a>
+							</p>
+							<strong>Flag:</strong>
+							<div class="f-l-a-g">HackTrinity{ev3n_A_cust0m_1sa_1snt_enough}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+::selection {
+	color: black;
+	background: #ffa0a0;
+}
+::-moz-selection {
+	color: black;
+	background: #ffa0a0;
+}
+
+ul {
+	margin-bottom: 20px;
+}
+
+pre, pre * {
+	text-shadow: none;
+	white-space: pre-wrap;
+}
+
+.py-kw {color: brown}
+.py-fn {color: rgb(30, 130, 200)}
+.py-int {color: mediumorchid}
+.py-str {color: green}
+.py-cmt {color: #777}
+
+.py-pre {
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
+.card-header {
+	border-bottom: none;
+}
+
+.card-body {
+	border-top: 1px solid lightblue;
+}
+
+.solution {
+	padding: 1.5em;
+	line-height: 1.75em;
+	color: black;
+	border-top: 1px solid lightblue;
+}
+
+.solution > p > img {
+	display: block;
+	margin: 20px 0;
+	max-width: 70%;
+	border-radius: 3px;
+	border: 1px solid #333;
+}
+
+.f-l-a-g, .n-o-f-l-a-g {
+	display: inline;
+	padding: 5px;
+	border-radius: 5px;
+	color: #0099dd;
+	background: lightcyan;
+	font-family: monospace;
+}
+
+.n-o-f-l-a-g {
+	padding: 3px 6px;
+	margin: 0.2em 0 0 1em;
+	color: #c02312;
+	background: mistyrose;
+	font-size: 0.9em;
+}
