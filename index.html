@@ -408,7 +408,7 @@ code {
 								This is yet another OpenVPN challenge. Normally you would want to scan the network for devices, but the description says to listen more. This suggests that you may be able to get the flag just by monitoring the network traffic.
 							</p>
 							<p>
-								A perfect tool for this job is Wireshark, so open that and select the interface connected via OpenVPN to start intercepting packets being sent on that network. You will immediately notice an influx of UDP packets from different hosts. To inspect the stream, right click on one of the packets and choose <em>Follow</em> &gt; <em>UDP Stream</em>.
+								A perfect tool for this job is <b>Wireshark</b>, so open that and select the interface connected via OpenVPN to start intercepting packets being sent on that network. You will immediately notice an influx of UDP packets from different hosts. To inspect the stream, right click on one of the packets and choose <em>Follow</em> &gt; <em>UDP Stream</em>.
 								<img src="images/challenge-gnu-1.png">
 								Then look through the stream contents until you see the flag.
 								<img src="images/challenge-gnu-2.png">
@@ -455,7 +455,7 @@ code {
 								<a href="https://en.wikipedia.org/wiki/List_of_filename_extensions_(A%E2%80%93E)#CIA" target="_blank">According to Wikipedia</a>, a CIA file is a Nintendo 3DS importable archive. You could spend a lot of time trying to get <b>ctrtool</b> to extract the archive's contents, only to realise that a better first step would be to find a 3DS emulator.
 							</p>
 							<p>
-								I downloaded Citra, which is a cross-platform Nintendo 3DS emulator, and loaded the given file to check out if it did anything. A window popped up with instructions to "touch the four corners" to get the flag, even though there were more than four corners. Defeating the impossible presented me with the flag!
+								I downloaded <b>Citra</b>, which is a cross-platform Nintendo 3DS emulator, and loaded the given file to check out if it did anything. A window popped up with instructions to "touch the four corners" to get the flag, even though there were more than four corners. Defeating the impossible presented me with the flag!
 								<img src="images/challenge-brew.png">
 							</p>
 							<strong>Flag:</strong>
@@ -726,7 +726,7 @@ Type "help", "copyright", "credits" or "license" for more information.</span>
 								Think about it, we have control of the stack and we know which branch to take to print the flag. All that's left is to redirect code execution to reach that part. The address we want to jump to when returning from <code>main</code> should be the address at <code>main[+97]</code> as that is where the flag is loaded as a parameter.
 							</p>
 							<p>
-								Run <code>python -c 'print(" " * 40 + "\x56\x1c\x00\x40")' &gt; exploit</code> to write 40 characters and the desired address <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">(in litte endian form)</a> to a file. Then send its contents as input to the binary and see if the exploit works.
+								Run <code>python -c 'print(" " * 40 + "\x56\x1c\x00\x40")' &gt; exploit</code> to write 40 characters and the desired address <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">(in litte endian format)</a> to a file. Then send its contents as input to the binary and see if the exploit works.
 								<img src="images/challenge-flow-5.png">
 								Nice, we got the "flag" locally and now it's time to trigger it on the server and get the real one. Run <code>nc ht3.hacktrinity.me 1337 &lt; exploit</code> to win a flag!
 								<img src="images/challenge-flow-6.png">
@@ -1033,7 +1033,7 @@ Type "help", "copyright", "credits" or "license" for more information.</span>
 								<img src="images/challenge-denovo3-18.png">
 								Alright, impressive! A DOSBox running the game DOOM in a Javascript sandbox. I guess we must play to find the flag. Hit enter a few times to immerse yourself in a world of 8-bit ultra-realistic gaming.
 								<img src="images/challenge-denovo3-19.png">
-								Look to the left to see a door and a lever beside it. Interact with the level using the space bar and enter the unlocked room to see the one and only... flag!
+								Look to the left to see a door and a lever beside it. Interact with the lever using the space bar and enter the unlocked room to see the one and only... flag!
 								<img src="images/challenge-denovo3-20.png">
 								Wow, what a challenge! In reality most of the "working stuff out" took me several days, but that was one hell of a learning experience.
 							</p>
