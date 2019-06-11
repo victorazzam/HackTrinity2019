@@ -678,7 +678,7 @@ Type "help", "copyright", "credits" or "license" for more information.</span>
 <span class="py-pre">>>></span> start, end = <span class="py-int">0x3a</span>, <span class="py-int">0x66</span>   <span class="py-cmt"># Info taken from zipdetails output</span>
 <span class="py-pre">>>></span> payload = data[start:end] <span class="py-cmt"># Payload containing flag.txt contents</span>
 <span class="py-pre">>>></span> <span class="py-kw">import</span> zlib
-<span class="py-pre">>>></span> zlib.<span class="py-fn">decompress</span>(payload, <span class="py-int">-15</span>) <span class="py-cmt"># https://stackoverflow.com/q/1089963</span>
+<span class="py-pre">>>></span> zlib.<span class="py-fn">decompress</span>(payload, <span class="py-int">-zlib.MAX_WBITS</span>) <span class="py-cmt"># https://stackoverflow.com/q/1089963</span>
 <span class="py-str">b'HackTrinity{g0ttA_l0ve_pkz1p_l1m1tati0ns}\n'</span></pre>
 							</p>
 							<strong>Flag:</strong>
